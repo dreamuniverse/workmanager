@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
   }
 
   private void setWork() {
-    //workmanager period work (not less than 15 minutes)
+    //workmanager periodic work (not less than 15 minutes)
     PeriodicWorkRequest periodicWorkRequest = new PeriodicWorkRequest
         .Builder(PeriodWorker.class, 16, TimeUnit.MINUTES)
         .build();
@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
   private void initView() {
     toggleButton = findViewById(R.id.notification_switch);
     toggleButton.setTextOff("foreground service is off");
-    toggleButton.setTextOn("foreground service is on and period work is running");
+    toggleButton.setTextOn("foreground service is on and periodic work is running");
     toggleButton.setChecked(NotificationConfig.isNotificationOn());
     toggleButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
       @Override
