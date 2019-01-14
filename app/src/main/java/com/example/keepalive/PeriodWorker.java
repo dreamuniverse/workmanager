@@ -21,7 +21,7 @@ public class PeriodWorker extends Worker{
   @Override
   public Result doWork() {
     //only if the notification setting is on will the wake up service starts(can be set periodic without this condition)
-    if (isServiceRunning(getApplicationContext(), "KeepAliveService")
+    if (isServiceRunning(getApplicationContext(), "ForeService")
         || !NotificationConfig.isNotificationOn()) {
       return Result.success();
     }
